@@ -1,0 +1,52 @@
+<!--
+  Name: Christian P. Byrne
+  Course: CSC 337 | Summer 2021
+  Description: HTML Template for terminal GUI 
+               chat app.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatty</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/index.js"></script>
+  </head>
+  <body>
+    <div>
+      <div class="msg">
+        <div class="termtitle">
+          <div>Message History</div>
+        </div>
+        <div class="tbody"></div>
+      </div>
+    </div>
+    <div>
+      <div class="term">
+        <div class="termtitle">
+          <div>
+            <button>&#10005;</button>
+            <button>&#9472;</button>
+            <button>&#9723;</button>
+          </div>
+          <div>
+            <input placeholder="Enter an alias" type="text" />
+            <input type="button" value="Submit" />
+          </div>
+        </div>
+        <div class="tbody">
+          <textarea></textarea>
+          <div class="stdout"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

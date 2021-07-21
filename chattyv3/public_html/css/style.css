@@ -1,0 +1,122 @@
+/*
+ * Name: Christian P. Byrne
+ * Course: CSC337 | Summer 2021
+ * Description: Stylesheet for Ubuntu Terminal Emulator Chat App.
+ *              Variables for extendability.
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--primary-bg);
+  font-family: "Ubuntu";
+  font-size: var(--type-size);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Message History Wrapper */
+body > div:nth-of-type(1) {
+  margin-bottom: 3vh;
+}
+
+/* Dynamic history message divs */
+.msg > .tbody > div {
+  color: var(--primary-text);
+  padding: 0 0 0.175ch 1ch;
+}
+
+/* Wrappers for both terminals */
+body > div:nth-of-type(2),
+body > div:nth-of-type(1) {
+  display: flex;
+  justify-content: var(--title-justify);
+  align-items: center;
+}
+
+/* Psuedo Elements? need? */
+button:hover {
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+/* demop title bar */
+.term > div:nth-of-type(1) {
+  justify-content: space-between;
+}
+
+.term > div:nth-of-type(1) > div:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+}
+
+input[type="button"] {
+  color: var(--disabled);
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  background: var(--tertiary-bg);
+}
+
+input[type="button"] {
+  cursor: pointer;
+}
+
+input {
+  border-style: ridge;
+  border-radius: var(--terminal-radius);
+  border-color: var(--tertiary-text);
+}
+
+.stdout.focus::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 1ch;
+  height: 0.2em;
+  margin-top: 0.8em;
+  margin-left: 1ch;
+  animation: blinking 1.2s infinite steps(1, start);
+}
+
+@keyframes blinking {
+  0%,
+  100% {
+    background: var(--secondary-bg);
+  }
+  50% {
+    background-color: var(--primary-text);
+  }
+}
+::-webkit-scrollbar {
+  margin-right: -2px;
+  padding-right: 2px;
+  border-radius: 4px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-right: -2px;
+  padding-right: 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  margin-right: -2px;
+  padding-right: 2px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
